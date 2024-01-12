@@ -1,26 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { ChakraProvider, Box, Container } from '@chakra-ui/react';
+import Header from './components/Header';
+import EducationSection from './components/Education';
+import CareerHistorySection from './components/CareerHistory';
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <ChakraProvider>
+      <Box p={5}>
+        <Container
+          maxW="container.md"
+          bg="white"
+          boxShadow="lg"
+          p={6}
+          borderRadius="lg"
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          <Header />
+          <CareerHistorySection />
+          <EducationSection />
+        </Container>
+      </Box>
+    </ChakraProvider>
   );
-}
+};
 
 export default App;
